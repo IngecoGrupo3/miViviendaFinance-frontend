@@ -29,7 +29,6 @@
   box-shadow: 0 0 0 0.125em currentColor;
 }
 
-/* Colores: solo los 3 de global.css */
 .color_orange {
   background: var(--main-orange);
   color: #ffffff;
@@ -45,7 +44,6 @@
   color: #ffffff;
 }
 
-/* Peso del texto (normal con más volumen que 400) */
 .weight_normal {
   font-weight: 500;
 }

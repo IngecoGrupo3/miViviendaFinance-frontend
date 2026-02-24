@@ -14,7 +14,6 @@
   background: var(--color-bg);
   color: var(--color-text);
   width: 100%;
-  max-width: 32rem;
   max-height: 90vh;
   border-radius: 1rem;
   box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.15);

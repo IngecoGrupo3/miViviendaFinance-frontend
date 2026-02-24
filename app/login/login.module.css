@@ -1,0 +1,30 @@
+.formContainer {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.title {
+    color: var(--soft-purple);
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.buttonWrapper {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}

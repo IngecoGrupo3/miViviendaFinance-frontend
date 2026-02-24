@@ -1,12 +1,11 @@
 :root {
-    /* Colores */
-    --color-bg: #FFFFFF;
+  --color-bg: #FFFFFF;
 
-    --main-orange: #FEA100;
-    --main-purple: #332A7B;
-    --soft-purple: #9183FF;
-    --color-text: #404040;
-    --navbar-gradient: linear-gradient(180deg, #332A7B 31%, #5D4DE1 100%);
+  --main-orange: #FEA100;
+  --main-purple: #332A7B;
+  --soft-purple: #9183FF;
+  --color-text: #404040;
+  --navbar-gradient: linear-gradient(180deg, #332A7B 31%, #5D4DE1 100%);
 }
 
 *,

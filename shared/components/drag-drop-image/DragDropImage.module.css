@@ -1,0 +1,30 @@
+.container {
+    width: 100%;
+    border: 1px dashed #AEC2FB;
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: transparent;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.container:hover {
+    background-color: #f7f9fc;
+    border-color: var(--main-purple);
+}
+
+.iconWrapper {
+    color: var(--main-purple);
+    margin-bottom: 0.5rem;
+}
+
+.text {
+    font-size: 0.8rem;
+    color: #404040;
+    margin: 0;
+    font-weight: 500;
+}

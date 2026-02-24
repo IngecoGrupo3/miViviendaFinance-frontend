@@ -1,0 +1,50 @@
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin: 1rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: var(--main-purple);
+    z-index: 0;
+    transform: translateY(-50%);
+}
+
+.stepsWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    z-index: 1;
+}
+
+.circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 700;
+    z-index: 1;
+    box-shadow: 0 0 0 6px var(--color-bg);
+}
+
+.active {
+    background-color: var(--main-orange);
+}
+
+.inactive {
+    background-color: var(--main-purple);
+}

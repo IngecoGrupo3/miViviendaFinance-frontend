@@ -8,14 +8,15 @@ export type ModalProps = {
   children?: ReactNode;
   footer?: ReactNode;
   open: boolean;
+  maxWidth?: string;
 };
 
-export function Modal({ title, onClose, children, footer, open }: ModalProps) {
+export function Modal({ title, onClose, children, footer, open, maxWidth = "32rem" }: ModalProps) {
   if (!open) return null;
 
   return (
     <div className={styles.overlay} onClick={onClose} role="dialog" aria-modal="true" aria-labelledby="modal-title">
-      <div className={styles.dialog} onClick={(e) => e.stopPropagation()}>
+      <div className={styles.dialog} style={{ maxWidth }} onClick={(e) => e.stopPropagation()}>
         <header className={styles.header}>
           <h2 id="modal-title" className={styles.title}>
             {title}
