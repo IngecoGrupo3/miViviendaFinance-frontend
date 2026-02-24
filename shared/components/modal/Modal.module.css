@@ -1,0 +1,81 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 1000;
+  font-family: var(--font-primary), sans-serif;
+}
+
+.dialog {
+  background: var(--color-bg);
+  color: var(--color-text);
+  width: 100%;
+  max-width: 32rem;
+  max-height: 90vh;
+  border-radius: 1rem;
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 2rem;
+  flex-shrink: 0;
+}
+
+.title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--main-purple);
+  text-align: center;
+}
+
+.closeButton {
+  position: absolute;
+  top: 50%;
+  right: 1.25rem;
+  transform: translateY(-50%);
+  appearance: none;
+  border: none;
+  background: none;
+  color: var(--color-text);
+  cursor: pointer;
+  padding: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.closeButton:hover {
+  background: rgba(51, 42, 123, 0.1);
+  color: var(--main-purple);
+}
+
+.closeButton:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--soft-purple);
+}
+
+.body {
+  padding: 1.75rem 2rem;
+  overflow: auto;
+  flex: 1;
+  min-height: 0;
+}
+
+.footer {
+  padding: 1.25rem 2rem;
+  flex-shrink: 0;
+}

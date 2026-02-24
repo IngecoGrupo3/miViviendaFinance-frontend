@@ -1,0 +1,55 @@
+.root {
+  appearance: none;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  padding: 0.85em 3.2em;
+  font-family: var(--font-primary), sans-serif;
+  font-size: 0.8em;
+  line-height: 1;
+  user-select: none;
+}
+
+.root .icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.root:active:not(:disabled) {
+  transform: translateY(0.0625em);
+}
+
+.root:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 0.125em currentColor;
+}
+
+/* Colores: solo los 3 de global.css */
+.color_orange {
+  background: var(--main-orange);
+  color: #ffffff;
+}
+
+.color_purple {
+  background: var(--main-purple);
+  color: #ffffff;
+}
+
+.color_soft {
+  background: var(--soft-purple);
+  color: #ffffff;
+}
+
+/* Peso del texto (normal con más volumen que 400) */
+.weight_normal {
+  font-weight: 500;
+}
+
+.weight_bold {
+  font-weight: 700;
+}
