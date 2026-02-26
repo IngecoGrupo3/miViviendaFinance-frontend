@@ -8,6 +8,7 @@ import { Input } from "@/shared/components/input";
 import { Stepper } from "@/shared/components/stepper";
 import { Select } from "@/shared/components/select";
 import { DragDropImage } from "@/shared/components/drag-drop-image";
+import { Sidebar } from "@/shared/components/sidebar";
 import styles from "./page.module.css";
 
 export default function Gallery() {
@@ -97,6 +98,16 @@ export default function Gallery() {
                     <p>Área para subir imágenes</p>
                     <div className={styles.row} style={{ flexDirection: 'column', width: '100%', maxWidth: '400px' }}>
                         <DragDropImage />
+                    </div>
+                </div>
+
+                <div className={styles.card}>
+                    <h3 className={styles.cardTitle}>Sidebar</h3>
+                    <p>Navegación lateral con iconos y menú</p>
+                    <div className={styles.row} style={{ flexDirection: "column", width: "100%" }}>
+                        <div className={styles.sidebarDemo}>
+                            <Sidebar isFixed={false} />
+                        </div>
                     </div>
                 </div>
 
