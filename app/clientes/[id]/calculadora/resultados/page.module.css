@@ -1,0 +1,155 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pageTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--main-purple);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.breadcrumbLink {
+    color: var(--main-purple);
+    text-decoration: none;
+}
+
+.breadcrumbLink:hover {
+    text-decoration: underline;
+}
+
+.titleDivider {
+    border: none;
+    height: 1px;
+    background-color: var(--soft-purple);
+    margin-bottom: 0.5rem;
+    opacity: 0.3;
+}
+
+.topSection {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    border-radius: 20px;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.cardTitle {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--main-purple);
+    margin: 0 0 1rem 0;
+    opacity: 0.9;
+}
+
+.resumenCard {
+    flex: 1;
+    background-color: #FAF5FF;
+    /* Pale lavender */
+    min-width: 300px;
+}
+
+.resumenGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.4;
+}
+
+.resumenGrid span {
+    font-weight: 400;
+}
+
+.rightCards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    flex: 1;
+    min-width: 300px;
+}
+
+.resultadosCard {
+    background-color: #FFFDF9;
+    /* Pale orange */
+    box-shadow: 0 4px 20px rgba(254, 161, 0, 0.15);
+}
+
+.resultadosRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.resultadoPrincipal {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.resultadoPrincipal span {
+    font-size: 1.05rem;
+    font-weight: 400;
+}
+
+.resultadoSecundario {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.resultadoSecundario span {
+    font-weight: 400;
+}
+
+.resultadoIntereses {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.resultadoIntereses span {
+    font-weight: 400;
+}
+
+.indicadoresCard {
+    background-color: #FAF5FF;
+}
+
+.indicadoresGrid {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-text);
+}
+
+.indicadoresGrid span {
+    font-weight: 400;
+}
+
+.amortizacionCard {
+    background-color: #FAF5FF;
+}
+
+.footerActions {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}

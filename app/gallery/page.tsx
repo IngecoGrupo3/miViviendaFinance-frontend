@@ -8,10 +8,22 @@ import { Input } from "@/shared/components/input";
 import { Stepper } from "@/shared/components/stepper";
 import { Select } from "@/shared/components/select";
 import { DragDropImage } from "@/shared/components/drag-drop-image";
+import { Table, Column } from "@/shared/components/table/Table";
+import { AsignarViviendaModal } from "@/shared/components/asignar-vivienda-modal/AsignarViviendaModal";
 import styles from "./page.module.css";
 
 export default function Gallery() {
     const [modalOpen, setModalOpen] = useState(false);
+    const [asignarViviendaOpen, setAsignarViviendaOpen] = useState(false);
+
+    const mockTableData = [
+        { id: "1", nombres: "Juan Perez", dni: "70104585", correo: "juanp@gmail.com", celular: "998547522" }
+    ];
+
+    const mockTableColumns: Column<any>[] = [
+        { key: "nombres", header: "Nombres" },
+        { key: "dni", header: "DNI" }
+    ];
 
     return (
         <main className={styles.page}>
@@ -107,6 +119,17 @@ export default function Gallery() {
                         <Button color="purple" weight="bold" onClick={() => setModalOpen(true)}>
                             Abrir modal
                         </Button>
+                        <Button color="orange" weight="bold" onClick={() => setAsignarViviendaOpen(true)}>
+                            Modal Asignar Vivienda
+                        </Button>
+                    </div>
+                </div>
+
+                <div className={styles.card}>
+                    <h3 className={styles.cardTitle}>Table</h3>
+                    <p>Tabla de datos</p>
+                    <div className={styles.row}>
+                        <Table data={mockTableData} columns={mockTableColumns} />
                     </div>
                 </div>
             </section>
@@ -119,6 +142,11 @@ export default function Gallery() {
             >
                 <div className={styles.modalBodyPlaceholder} />
             </Modal>
+
+            <AsignarViviendaModal
+                open={asignarViviendaOpen}
+                onClose={() => setAsignarViviendaOpen(false)}
+            />
         </main>
     );
 }

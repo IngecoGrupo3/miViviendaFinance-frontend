@@ -1,0 +1,126 @@
+.container {
+    padding: 1rem 2.5rem 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    color: var(--color-text);
+    font-family: inherit;
+}
+
+.modalTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--main-purple);
+    text-align: center;
+    margin: 0 0 1.5rem 0;
+}
+
+.headerRow {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+.monedaLabel {
+    font-weight: 500;
+}
+
+.radioLabel {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.radioInput {
+    accent-color: var(--color-text);
+    width: 1.1rem;
+    height: 1.1rem;
+    cursor: pointer;
+}
+
+.radioText {
+    color: var(--color-text);
+}
+
+.cardsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.card {
+    background-color: #FAF5FF;
+    /* Light purple tint similar to image */
+    border-radius: 20px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    border: 2px solid transparent;
+}
+
+.cardSelected {
+    background-color: #FFFDF9;
+    /* Light orange tint */
+    box-shadow: 0 4px 20px rgba(254, 161, 0, 0.2);
+}
+
+.imagePlaceholder {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background-color: #e2e8f0;
+    border-radius: 12px;
+    background-image: linear-gradient(135deg, #e2e8f0 25%, #cbd5e1 25%, #cbd5e1 50%, #e2e8f0 50%, #e2e8f0 75%, #cbd5e1 75%, #cbd5e1 100%);
+    background-size: 20px 20px;
+}
+
+/* Looking at the reference image, the top has a rounded picture, so keeping border-radius */
+.cardImageContainer {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.cardContent {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.cardTitle {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--color-text);
+}
+
+.cardLocation {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0;
+}
+
+.cardArea {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0;
+}
+
+.cardPrice {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0.5rem 0 0 0;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+}

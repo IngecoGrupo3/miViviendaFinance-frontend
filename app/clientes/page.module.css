@@ -1,0 +1,106 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pageTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--main-purple);
+    margin: 0;
+}
+
+.titleDivider {
+    border: none;
+    height: 1px;
+    background-color: var(--soft-purple);
+    margin-bottom: 2rem;
+    opacity: 0.3;
+}
+
+.topActionsRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.searchWrapper {
+    position: relative;
+    width: 400px;
+}
+
+.searchIcon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.searchInput {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    border-radius: 9999px;
+    border: 1px solid #ddd;
+    font-size: 0.95rem;
+    outline: none;
+    transition: box-shadow 0.2s;
+    color: var(--color-text);
+}
+
+.searchInput:focus {
+    border-color: var(--soft-purple);
+    box-shadow: 0 0 0 2px rgba(145, 131, 255, 0.2);
+}
+
+.emailLinks {
+    color: var(--main-purple);
+    text-decoration: underline;
+    text-decoration-color: var(--soft-purple);
+    text-underline-offset: 4px;
+}
+
+.actionsContainer {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.actionBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+    position: relative;
+}
+
+.actionBtn:hover {
+    background-color: #f0f4ff;
+}
+
+/* Custom icon for home+ since react-icons doesn't have an exact match */
+.homePlus {
+    position: absolute;
+    right: -2px;
+    bottom: -2px;
+    background-color: white;
+    color: #5C82E6;
+    font-size: 0.8rem;
+    font-weight: 800;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,78 @@
+.tableContainer {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 16px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.table th {
+    color: white;
+    padding: 1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.table_orange th {
+    background-color: var(--main-orange);
+}
+
+.table_purple th {
+    background-color: var(--soft-purple);
+}
+
+.firstTh {
+    border-top-left-radius: 9999px;
+    border-bottom-left-radius: 9999px;
+    padding-left: 2rem;
+}
+
+.lastTh {
+    border-top-right-radius: 9999px;
+    border-bottom-right-radius: 9999px;
+    padding-right: 2rem;
+}
+
+.table td {
+    padding: 1rem;
+    background-color: white;
+    /* default to white, overwritten below based on row */
+    color: var(--color-text);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.table_orange .rowEven td {
+    background-color: #FAF4EB;
+}
+
+.table_purple .rowEven td,
+.table_purple .rowOdd td {
+    background-color: transparent;
+}
+
+.rowOdd td {
+    background-color: white;
+}
+
+.firstTd {
+    border-top-left-radius: 9999px;
+    border-bottom-left-radius: 9999px;
+    padding-left: 2rem;
+}
+
+.lastTd {
+    border-top-right-radius: 9999px;
+    border-bottom-right-radius: 9999px;
+    padding-right: 2rem;
+}
+
+/* to add subtle aesthetic since odd rows are white */
+.rowOdd {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+}
