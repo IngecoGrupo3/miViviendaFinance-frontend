@@ -7,7 +7,7 @@ import { ReactNode } from "react";
 export function MainLayout({ children }: { children: ReactNode }) {
     return (
         <div className={styles.layout}>
-            <Sidebar />
+            <Sidebar isFixed={false} />
             <main className={styles.mainContent}>
                 {children}
             </main>

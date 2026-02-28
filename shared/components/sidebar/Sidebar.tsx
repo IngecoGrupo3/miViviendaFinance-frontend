@@ -1,70 +1,126 @@
 "use client";
 
-import { FiUsers, FiHome, FiUser, FiLogOut } from "react-icons/fi";
+import React, { useMemo, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { FiUsers, FiHome, FiUser, FiLogOut } from "react-icons/fi";
 import styles from "./Sidebar.module.css";
 
-export function Sidebar() {
-    const pathname = usePathname();
+interface SidebarItem {
+  id: string;
+  label: string;
+  icon: React.ReactNode;
+  href: string;
+}
 
-    const menuItems = [
-        { href: "/clientes", label: "Clientes", icon: FiUsers },
-        { href: "/viviendas", label: "Viviendas", icon: FiHome },
-    ];
+const sidebarItems: SidebarItem[] = [
+  { id: "clientes", label: "Clientes", icon: <FiUsers size={24} />, href: "/clientes" },
+  { id: "viviendas", label: "Viviendas", icon: <FiHome size={24} />, href: "/viviendas" },
+  { id: "perfil", label: "Perfil", icon: <FiUser size={24} />, href: "/perfil" },
+  { id: "salir", label: "Salir", icon: <FiLogOut size={24} />, href: "/login" },
+];
 
-    const bottomItems = [
-        { href: "/perfil", label: "Perfil", icon: FiUser },
-        { href: "/login", label: "Salir", icon: FiLogOut },
-    ];
+interface SidebarProps {
+  isFixed?: boolean;
+}
 
-    return (
-        <aside className={styles.sidebar}>
-            <div className={styles.menuSection} style={{ marginTop: "2rem" }}>
-                {menuItems.map((item) => {
-                    const isActive = pathname === item.href || (item.href === "/clientes" && pathname === "/");
-                    const Icon = item.icon;
-                    return (
-                        <Link key={item.href} href={item.href} className={styles.menuItem}>
-                            {isActive && (
-                                <>
-                                    <div className={styles.activeBackground}></div>
-                                    <div className={styles.activeIndicator}></div>
-                                </>
-                            )}
-                            <div className={styles.iconContainer}>
-                                <Icon size={24} color={isActive ? "var(--main-purple)" : "white"} />
-                            </div>
-                            <div className={`${styles.textContainer} ${isActive ? styles.activeText : ""}`}>
-                                {item.label}
-                            </div>
-                        </Link>
-                    );
-                })}
-            </div>
+export function Sidebar({ isFixed = true }: SidebarProps) {
+  const [collapsed, setCollapsed] = useState(true);
+  const pathname = usePathname();
 
-            <div className={styles.menuSection} style={{ marginBottom: "2rem" }}>
-                {bottomItems.map((item) => {
-                    const isActive = pathname === item.href;
-                    const Icon = item.icon;
-                    return (
-                        <Link key={item.href} href={item.href} className={styles.menuItem}>
-                            {isActive && (
-                                <>
-                                    <div className={styles.activeBackground}></div>
-                                    <div className={styles.activeIndicator}></div>
-                                </>
-                            )}
-                            <div className={styles.iconContainer}>
-                                <Icon size={24} color={isActive ? "var(--main-purple)" : "white"} />
-                            </div>
-                            <div className={`${styles.textContainer} ${isActive ? styles.activeText : ""}`}>
-                                {item.label}
-                            </div>
-                        </Link>
-                    );
-                })}
-            </div>
-        </aside>
-    );
+  const activeId = useMemo<SidebarItem["id"]>(() => {
+    if (!pathname) return "clientes";
+
+    if (pathname === "/" || pathname.startsWith("/clientes")) return "clientes";
+    if (pathname.startsWith("/viviendas")) return "viviendas";
+    if (pathname.startsWith("/perfil")) return "perfil";
+    if (pathname.startsWith("/login")) return "salir";
+
+    return "clientes";
+  }, [pathname]);
+
+  const topItems = sidebarItems.slice(0, 2);
+  const bottomItems = sidebarItems.slice(2);
+
+  const sidebarClassName = [
+    styles.sidebar,
+    isFixed ? "" : styles.relative,
+    collapsed ? styles.collapsed : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+  return (
+    <aside
+      className={sidebarClassName}
+      onMouseEnter={() => setCollapsed(false)}
+      onMouseLeave={() => setCollapsed(true)}
+    >
+      <div className={styles.gradientBar}>
+        <div className={styles.iconNav}>
+          {topItems.map((item) => {
+            const isActive = item.id === activeId;
+            return (
+              <Link
+                key={item.id}
+                href={item.href}
+                className={`${styles.iconButton} ${isActive ? styles.iconButtonActive : ""}`}
+              >
+                {item.icon}
+              </Link>
+            );
+          })}
+        </div>
+
+        <div className={styles.bottomIcons}>
+          {bottomItems.map((item) => {
+            const isActive = item.id === activeId;
+            return (
+              <Link
+                key={item.id}
+                href={item.href}
+                className={`${styles.iconButton} ${isActive ? styles.iconButtonActive : ""}`}
+              >
+                {item.icon}
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className={styles.contentArea}>
+        <nav className={styles.nav}>
+          <div className={styles.navGroup}>
+            {topItems.map((item) => {
+              const isActive = item.id === activeId;
+              return (
+                <Link
+                  key={item.id}
+                  href={item.href}
+                  className={`${styles.item} ${isActive ? styles.itemActive : ""}`}
+                >
+                  <span className={styles.label}>{item.label}</span>
+                </Link>
+              );
+            })}
+          </div>
+
+          <div className={styles.navGroup}>
+            {bottomItems.map((item) => {
+              const isActive = item.id === activeId;
+              return (
+                <Link
+                  key={item.id}
+                  href={item.href}
+                  className={`${styles.item} ${isActive ? styles.itemActive : ""}`}
+                >
+                  <span className={styles.label}>{item.label}</span>
+                </Link>
+              );
+            })}
+          </div>
+        </nav>
+      </div>
+    </aside>
+  );
 }
